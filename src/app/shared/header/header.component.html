@@ -13,15 +13,20 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li routerLinkActive="active"><a routerLink="home">Homepage</a></li>
-                            <li routerLinkActive="active"><a routerLink="animeList">Animes</a></li>
+                            <li routerLinkActive="active"><a routerLink="anime-list">Animes</a></li>
+                            <li class="containerSearch">
+                                <form (ngSubmit)="searchAnime()">
+                                    <input type="text" name="searchQuery" [(ngModel)]="searchQuery" [placeholder]="placeholder">
+                                    <button type="submit"><span class="icon_search"></span></button>
+                                </form>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <div class="col-lg-2">
                 <div class="header__right">
-                    <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                    <a href="./login.html"><span class="icon_profile"></span></a>
+                    <a href="#" class="search-switch"><span class="icon_heart"></span></a>
                 </div>
             </div>
         </div>

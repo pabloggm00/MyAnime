@@ -653,6 +653,7 @@ ol {
 
 .product__item__pic {
 	height: 325px;
+	width: 225px;
 	position: relative;
 	border-radius: 5px;
 }

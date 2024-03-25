@@ -1,0 +1,29 @@
+.header__menu form {
+    display: inline-block; /* Alinea el formulario en línea con los elementos del menú */
+}
+
+.header__menu input[type="text"] {
+    padding: 8px; /* Ajusta el relleno del campo de entrada */
+    border: 1px solid #ccc; /* Agrega un borde alrededor del campo de entrada */
+    border-radius: 5px; /* Redondea las esquinas del campo de entrada */
+    background-color: transparent; /* Hace que el fondo del campo de entrada sea transparente */
+    box-sizing: border-box; /* Asegura que el borde y el relleno se incluyan en el ancho total del campo de entrada */
+}
+
+.header__menu input[type="text"]:focus {
+    outline: none; /* Elimina el borde de enfoque en el campo de entrada */
+    border-color: #007bff; /* Cambia el color del borde cuando el campo de entrada está enfocado */
+}
+
+.header__menu button[type="submit"] {
+    padding: 8px 12px; /* Ajusta el relleno del botón */
+    background-color: transparent; /* Hace que el fondo del botón sea transparente */
+    border: 1px solid #ccc; /* Agrega un borde alrededor del botón */
+    border-radius: 5px; /* Redondea las esquinas del botón */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+}
+
+.header__menu input[type="text"],
+.header__menu button[type="submit"] .icon_search {
+    color: #fff; /* Cambia el color del icono a blanco */
+}
