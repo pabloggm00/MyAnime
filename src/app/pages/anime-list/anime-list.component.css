@@ -1,0 +1,10 @@
+.filters {
+    margin-bottom: 15px!important;
+}
+
+.filters .multiselect-native-select {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
