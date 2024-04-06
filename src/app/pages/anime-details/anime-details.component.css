@@ -1,0 +1,9 @@
+.anime__details__btn {
+  justify-content: center;
+  display: flex;
+}
+
+.follow-btn{
+    margin-bottom: 20px; /* Añade margen izquierdo al segundo enlace */
+    padding: 10px 20px;
+}

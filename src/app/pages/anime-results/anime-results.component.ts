@@ -8,6 +8,8 @@ import { ApiService } from '../../services/api.service';
   styleUrl: './anime-results.component.css'
 })
 export class AnimeResultsComponent implements OnInit {
+
+  animeDetailsLink: string = "/anime-details";
   searchQuery: string = '';
   searchResults: any[] = [];
 

@@ -29,15 +29,9 @@ export class AnimeDetailsComponent implements OnInit{
         
         this.animeId = params.get('id')!;
       }
-
-      // Verifica si hay un trailer y marca la URL como segura si existe
-      if (this.animeDetails && this.animeDetails.trailer && this.animeDetails.trailer.embed_url) {
-        this.trailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.animeDetails.trailer.embed_url);
-      }
-
       this.fetchAnimeDetails();
       this.fetchAnimeRecommendation();
-      
+
     });
 
   
@@ -47,6 +41,15 @@ export class AnimeDetailsComponent implements OnInit{
     this.apiService.getAnimeById(this.animeId).subscribe(
       (data) => {
       this.animeDetails = data.data;
+
+      // Verifica si hay un trailer y marca la URL como segura si existe. NO FUNCIONA Y SIGUE DANDO ERROR
+      /*if (this.animeDetails && this.animeDetails.trailer && this.animeDetails.trailer.embed_url) {
+        console.log(this.animeDetails.trailer.embed_url);
+        this.trailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.animeDetails.trailer.embed_url);
+      }*/
+
+
+      console.log(this.animeDetails);
       },
       (error) => {
         console.log("Error: ", error);
@@ -57,7 +60,26 @@ export class AnimeDetailsComponent implements OnInit{
   fetchAnimeRecommendation(){
     this.apiService.getAnimeByIdRecommendation(this.animeId).subscribe(
       (data) => {
-      this.animeRecomendations = data.data;
+      this.animeRecomendations = data.data.slice(0,5);
+
+      /*for(let i = 0; i < 5; i++){
+        const recommendation = this.animeRecomendations[i];
+        const malId = recommendation.entry.mal_id;
+
+        this.apiService.getAnimeById(malId).subscribe(
+          (animeData) => {
+          const anime = animeData.data;
+
+          this.animes.push(anime);
+          console.log("Se ha agregado: " + anime);
+          },
+          (error) => {
+            console.log("Error: ", error);
+          }
+          )
+      }*/
+
+      
       },
       (error) => {
         console.log("Error: ", error);
@@ -65,16 +87,6 @@ export class AnimeDetailsComponent implements OnInit{
       )
   }
 
-  /*fetchAnimeRecommendationById(){
-    this.apiService.getAnimeById().subscribe(
-      (data) => {
-        this.animes = data.data;
-      },
-      (error) =>{
-        console.log("Error: ", error);
-      }
-    )
-  }*/
 
   getAnimeRecommendationById(id:string): any{
     console.log(this.animes.find(anime => anime.id === id));

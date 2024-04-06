@@ -11,6 +11,8 @@ import { AnimeListComponent } from './pages/anime-list/anime-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AnimeResultsComponent } from './pages/anime-results/anime-results.component';
 import { FormsModule } from '@angular/forms';
+import { AnimeListTopComponent } from './pages/anime-list-top/anime-list-top.component';
+import { AnimeListService } from './services/anime-list.service';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,14 @@ import { FormsModule } from '@angular/forms';
     HomepageComponent,
     AnimeDetailsComponent,
     AnimeListComponent,
-    AnimeResultsComponent
+    AnimeResultsComponent,
+    AnimeListTopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -39,4 +39,17 @@ export class ApiService {
     return this.http.get<any>(`${this.baseUrl}/anime`);
   }
 
+  getAnimesTopByFilter(filter:string, page: number, limit: number): Observable<any>{
+    const params = new HttpParams()
+    .set('filter', filter)
+    .set('page', page.toString())
+    .set('limit', limit.toString())
+    .set('sfw', true);
+    return this.http.get<any>(`${this.baseUrl}/top/anime`, {params: params});
+  }
+
+  getAnimesRecent(): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}/watch/episodes`);
+  }
+
 }
