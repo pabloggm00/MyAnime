@@ -7,7 +7,7 @@ import { AnimeResultsComponent } from './pages/anime-results/anime-results.compo
 
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
-  { path: 'anime-details', component: AnimeDetailsComponent },
+  { path: 'anime-details/:id', component: AnimeDetailsComponent },
   { path: 'anime-list', component: AnimeListComponent },
   { path: 'anime-results', component: AnimeResultsComponent },
   { path: '**', pathMatch:'full', redirectTo: 'home' },

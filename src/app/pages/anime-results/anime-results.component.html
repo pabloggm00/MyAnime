@@ -28,15 +28,16 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg"  [style.backgroundImage]="'url(' + anime.images.jpg.large_image_url + ')'">
                                     <div class="ep">{{ anime.episodes }}</div>
-                                    <div class="comment"><i class="fa fa-comments"></i> </div>
-                                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    <div class="comment"><i class="fa fa-star"></i> {{anime.score}} </div>
+                                    <div class="view" [ngClass]="{ 'text-danger': !anime.airing, 'text-success': anime.airing}">
+                                        <i class="fa fa-circle"></i> {{ anime.status }}
+                                    </div>
                                 </div>
                                 <div class="product__item__text">
                                     <ul>
-                                        <li>Active</li>
-                                        <li>Movie</li>
+                                        <li>{{anime.type}}</li>
                                     </ul>
-                                    <h5><a href="#">{{anime.title}}</a></h5>
+                                    <h5><a [routerLink]="['/anime-details', anime.mal_id]">{{anime.title}}</a></h5>
                                 </div>
                             </div>
                         </div>

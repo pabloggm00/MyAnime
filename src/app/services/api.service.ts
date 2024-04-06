@@ -8,14 +8,9 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   private baseUrl = 'https://api.jikan.moe/v4';
-  private baseUrl2 = 'https://api.consumet.org';
 
 
   constructor(private http: HttpClient){}
-
-  public getNaruto(): Observable<any>{
-    return this.http.get<any>(`${this.baseUrl2}/anime/gogoanime/info/spy-x-family`);
-  }
 
   getAnimesStatus(status:string, query: string, page: number, limit: number): Observable<any> {
     const params = new HttpParams()
@@ -27,13 +22,21 @@ export class ApiService {
   }
 
   
-  getAnimeById(id: number): Observable<any> {
+  getAnimeById(id: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/anime/${id}`);
+  }
+  getAnimeByIdRecommendation(id: string): Observable<any> {
+    console.log(`${id}`);
+    return this.http.get<any>(`${this.baseUrl}/anime/${id}/recommendations`);
   }
 
   searchAnimeByName(query: string): Observable<any> {
     const url = `${this.baseUrl}/anime`;
     return this.http.get<any>(url, { params: { q: query } });
+  }
+
+  getAllAnimes(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/anime`);
   }
 
 }
