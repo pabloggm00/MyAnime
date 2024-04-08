@@ -1,8 +1,10 @@
 # MyAnime
 
-Esta web consiste en recoger animes de Jikan API y pronto se podrán gestionar tus favoritos.
+Esta web consiste en recoger animes de Jikan API y pronto se podrán gestionar tus favoritos. Es de uso personal.
 
-Lleva menos de 2 semanas de desarrollo y poco tiempo dedicado.
+Lleva menos de 2 semanas de desarrollo y poco tiempo dedicado. 
+
+Se ha utilizado una plantilla gratuita para empezar y se ha retocado ciertas partes.
 
 ## Instalación
 
