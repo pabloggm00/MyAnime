@@ -1,5 +1,7 @@
 # MyAnime
 
+Estado: Parado por otros proyectos.
+
 Esta web consiste en recoger animes de Jikan API y pronto se podrán gestionar tus favoritos. Es de uso personal.
 
 Lleva menos de 2 semanas de desarrollo y poco tiempo dedicado. 
